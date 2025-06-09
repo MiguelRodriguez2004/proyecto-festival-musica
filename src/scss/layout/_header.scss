@@ -15,7 +15,7 @@
     }
  
     
-    .contenido-header {    
+    .contenido-header {  
         padding: 2rem;
         @include m.tablet {
             display: flex;
@@ -41,7 +41,7 @@
         flex-direction: row;
     }
     a {
-        color: v.$blanco;
+        color: v.$negro;
         font-size: 2.4rem;
 
         &:hover,

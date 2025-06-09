@@ -1,0 +1,54 @@
+@use 'base/mixins' as m;
+
+.aliados {
+  padding: 2rem 0;
+  overflow: hidden;
+
+//   h3 {
+//     text-align: center;
+//     font-size: 4rem;
+//     // margin-bottom: 2rem;
+//     color: #333;
+//   }
+
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+
+    .slide-track {
+      display: flex;
+      animation: scroll 28s linear infinite;
+    }
+
+    .slide {
+      min-width: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 1rem;
+
+      img {
+        height: 60px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+
+        &:hover {
+          filter: grayscale(0%);
+        }
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -115,3 +115,17 @@ function scrollNav() {
         })
     })
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slideTrack = document.getElementById("slide-track");
+
+  const logos = Array.from(slideTrack.children);
+  logos.forEach(logo => {
+    const clone = logo.cloneNode(true);
+    slideTrack.appendChild(clone);
+  });
+
+  const slideWidth = logos[0].offsetWidth;
+  const totalSlides = slideTrack.children.length;
+  slideTrack.style.width = `${slideWidth * totalSlides}px`;
+});
