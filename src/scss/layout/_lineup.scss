@@ -2,7 +2,7 @@
 @use 'base/mixins' as m;
 
 .lineup {
-    background-color: v.$rosa;
+    background-color: v.$rojo;
     h3, .dia {
         text-align: center;
         color: v.$blanco;
@@ -43,15 +43,15 @@
 }
 
 .bg-amarillo {
-    background-color: v.$amarillo;
+    background-color: v.$gris;
     li:nth-child(odd) {
-        background-color: lighten(v.$amarillo, 5%);
+        background-color: lighten(v.$gris, 5%);
     }
 }
 
 .bg-verde {
-    background-color: v.$verde;
+    background-color: v.$crema;
     li:nth-child(odd) {
-        background-color: lighten(v.$verde, 5%);
+        background-color: lighten(v.$crema, 5%);
     }
 }

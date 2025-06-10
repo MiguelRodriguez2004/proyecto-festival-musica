@@ -1,25 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    navegacionFija();
     crearGaleria();
     resaltarEnlace();
     scrollNav();
+    carrouselImages();
+    toggleMenuButtons();
+    scrollActive();
 })
 
-function navegacionFija() {
-    const header = document.querySelector('.header');
-    const sobreFestival = document.querySelector('.sobre-festival');
-
-    document.addEventListener('scroll', function() {
-        if (sobreFestival.getBoundingClientRect().bottom < 1) {
-            header.classList.add('fixed');
-        } else {
-            header.classList.remove('fixed');
-        }
-    })
-}
-
 function crearGaleria() {
-    const cantidad_imagenes = 16
+    const cantidad_imagenes = 8
     const galeria = document.querySelector('.galeria-imagenes');
 
     for (let i = 1; i <= cantidad_imagenes; i++) {
@@ -27,7 +16,7 @@ function crearGaleria() {
         imagen.innerHTML = `
             <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
             <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
-            <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
+            <img class="imagenes" loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
         `;
 
         //Event Handler
@@ -45,7 +34,7 @@ function mostrarImagen(i) {
         imagen.innerHTML = `
         <source srcset="build/img/gallery/full/${i}.avif" type="image/avif">
         <source srcset="build/img/gallery/full/${i}.webp" type="image/webp">
-        <img loading="lazy" width="200" height="300" src="build/img/gallery/full/${i}.jpg" alt="imagen galeria">
+        <img class="imagenes" loading="lazy" width="200" height="300" src="build/img/gallery/full/${i}.jpg" alt="imagen galeria">
         `;
 
     // Crear Modal
@@ -116,16 +105,49 @@ function scrollNav() {
     })
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const slideTrack = document.getElementById("slide-track");
+function carrouselImages() {
+    const slideTrack = document.getElementById("slide-track");
 
-  const logos = Array.from(slideTrack.children);
-  logos.forEach(logo => {
-    const clone = logo.cloneNode(true);
-    slideTrack.appendChild(clone);
-  });
+    const logos = Array.from(slideTrack.children);
+    logos.forEach(logo => {
+        const clone = logo.cloneNode(true);
+        slideTrack.appendChild(clone);
+    });
 
-  const slideWidth = logos[0].offsetWidth;
-  const totalSlides = slideTrack.children.length;
-  slideTrack.style.width = `${slideWidth * totalSlides}px`;
-});
+    const slideWidth = logos[0].offsetWidth;
+    const totalSlides = slideTrack.children.length;
+    slideTrack.style.width = `${slideWidth * totalSlides}px`;
+}
+
+function toggleMenuButtons() {
+    const toggleButton = document.querySelector('.toggle-button');
+    const socialContainer = document.getElementById('socialButtons');
+    const toggleIcon = toggleButton.querySelector('i');
+
+    toggleButton.addEventListener('click', () => {
+    socialContainer.classList.toggle('active');
+
+    // Cambiar ícono de + a - y viceversa
+    if (socialContainer.classList.contains('active')) {
+        toggleIcon.classList.remove('fa-plus');
+        toggleIcon.classList.add('fa-minus');
+    } else {
+        toggleIcon.classList.remove('fa-minus');
+        toggleIcon.classList.add('fa-plus');
+    }
+    });
+}
+
+function scrollActive() {
+    const header = document.querySelector('.header');
+
+    window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 80) {
+        header.classList.add('fixed', 'shrink');
+    } else {
+        header.classList.remove('fixed', 'shrink');
+    }
+    });
+}

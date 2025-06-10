@@ -8,12 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
     <header class="header">
       <div class="contenedor contenido-header">
-        <!-- <h1>Techno & EDM Festival</h1> -->
-        <h1><img src="src/img/logo/Logos12.svg" alt=""></h1>
+        <div class="contenedor-logo">
+            <img src="src/img/logo/Logos12.svg" alt="">
+        </div>
         <nav class="navegacion-principal">
           <a href="#lineup">Servicios</a>
           <a href="#galeria">Galeria</a>
@@ -41,7 +43,7 @@
         <picture>
             <source srcset="build/img/imagen_dj.avif" type="image/avif" />
             <source srcset="build/img/imagen_dj.webp" type="image/webp" />
-            <img loading="lazy" src="build/img/imagen_dj.jpg" />
+            <img class="imagenes" loading="lazy" src="build/img/imagen_dj.jpg" />
         </picture>
       </div>
       <div class="contenido-festival">
@@ -54,7 +56,7 @@
     </section>
 
     <section id="lineup" class="lineup">
-      <h3>Line Up</h3>
+      <h3>Servicios</h3>
   
       <p class="dia">Viernes 21</p>
       <div class="escenarios-contenedor">
@@ -110,7 +112,7 @@
       </div>
   
   
-      <p class="dia">Sábado 22</p>
+      <!-- <p class="dia">Sábado 22</p>
       <div class="escenarios-contenedor contenedor">
           <div class="escenario bg-verde">
               <p class="nombre-escenario">Techno</p>
@@ -135,9 +137,9 @@
                       17:00 | <span>Argy</span>
                   </li>
               </ul>
-          </div>
+          </div> -->
   
-          <div class="escenario bg-amarillo">
+          <!-- <div class="escenario bg-amarillo">
               <p class="nombre-escenario">EDM</p>
   
               <ul class="calendario">
@@ -160,7 +162,7 @@
                       17:00 | <span>Steve Angello</span>
                   </li>
               </ul>
-          </div>
+          </div> -->
       </div>
   </section>
 
@@ -224,8 +226,25 @@
     </div>
 </section> -->
 
+<!-- Botones sociales flotantes -->
+<div class="social-buttons" id="socialButtons">
+    <a href="https://www.facebook.com/tu_pagina" target="_blank" class="social-button facebook" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/tu_usuario" target="_blank" class="social-button instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/1234567890" target="_blank" class="social-button whatsapp" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- Botón toggle solo para móvil -->
+    <button class="social-button toggle-button" aria-label="Abrir redes">
+        <i class="fas fa-plus"></i>
+    </button>
+</div>
+
 <footer class="footer">
-  <p>Techno & EDM Festival. Todos los derechos reservados.</p>
+  <p>House of Dev. Todos los derechos reservados.</p>
 </footer>
 
 <script src="build/js/app.js">

@@ -2,7 +2,7 @@
 @use 'base/mixins' as m;
 
 .contenedor-boletos {
-    background-color: v.$rosa;
+    background-color: v.$rojo;
     h3 {
         color: v.$blanco;
     }
@@ -41,7 +41,7 @@
     }
 
     &-header {
-        background-color: v.$rosa;
+        background-color: v.$rojo;
 
         p {
             text-transform: uppercase;
