@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollNav();
     carrouselImages();
     toggleMenuButtons();
-    scrollActive();
+    // scrollActive();
 })
 
 function crearGaleria() {
@@ -92,7 +92,7 @@ function resaltarEnlace() {
 }
 
 function scrollNav() {
-    const navLinks = document.querySelectorAll('.navegacion-principal a')
+    const navLinks = document.querySelectorAll('.nav-links')
 
     navLinks.forEach( link => {
         link.addEventListener('click', e => {
@@ -138,16 +138,24 @@ function toggleMenuButtons() {
     });
 }
 
-function scrollActive() {
-    const header = document.querySelector('.header');
+// function scrollActive() {
+//     const header = document.querySelector('.header');
 
-    window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
+//     window.addEventListener('scroll', () => {
+//     const currentScroll = window.scrollY;
 
-    if (currentScroll > 80) {
-        header.classList.add('fixed', 'shrink');
-    } else {
-        header.classList.remove('fixed', 'shrink');
-    }
-    });
+//     if (currentScroll > 80) {
+//         header.classList.add('fixed', 'shrink');
+//     } else {
+//         header.classList.remove('fixed', 'shrink');
+//     }
+//     });
+// }
+
+function openNav() {
+    document.getElementById('mobile-menu').style.width = "100%"
+}
+
+function closeNav() {
+    document.getElementById('mobile-menu').style.width = "0%"
 }

@@ -3,48 +3,154 @@
 
 .header {
     background-color: v.$blanco;
-
-    @include m.tablet {
-        &.fixed {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            box-shadow: .1rem .2rem .3rem #333;
-        }
-    }
-
-    .contenedor-logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .contenido-header {  
-        padding: 2rem;
-        @include m.tablet {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-    }
-}
-
-.navegacion-principal {
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    gap: 2rem;
-    @include m.tablet {
-        flex-direction: row;
-    }
-    a {
-        color: v.$negro;
-        font-size: 2.4rem;
+    height: 125px;
+    padding: 5px 10%;
+    list-style: none;
 
-        &:hover,
-        &.active {
+    .logo {
+        cursor: pointer;
+        margin-right: auto;
+
+        img {
+            height: 110px;
+            width: auto;
+            transition: all 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .nav-links {
+        display: flex;
+
+        li {
+            display: inline-block;
+            padding: 0 20px;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            a {
+                color: v.$negro;
+
+                &:hover {
+                    color: v.$rojo;
+                }
+            }
+        }
+    }
+
+    .btn button {
+        margin-left: 20px;
+        font-weight: 700;
+        color: v.$blanco;
+        padding: 9px 25px;
+        background: v.$rojo;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+            background-color: v.$gris;
             color: v.$rojo;
+            transform: scale(1.1);
+        }
+    }
+
+    // Botón "Menu" (móvil)
+    .menu {
+        display: none;
+
+        button {
+            margin-left: 20px;
+            font-weight: 700;
+            color: v.$blanco;
+            padding: 9px 25px;
+            background: v.$rojo;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+
+            &:hover {
+                background-color: v.$gris;
+                color: v.$rojo;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        background-color: rgba(18, 19, 20, 0.95);
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        .overlay-content {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        a {
+            padding: 15px;
+            font-size: 36px;
+            display: block;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            color: v.$blanco;
+
+            &:hover,
+            &:focus {
+                color: v.$rojo;
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 65px;
+        }
+    }
+
+    @include m.telefono {
+        .nav-links,
+        .btn {
+            display: none;
+        }
+
+        .menu {
+            display: block;
+        }
+    }
+
+    @include m.tablet {
+        .nav-links,
+        .btn {
+            display: flex;
+        }
+
+        .menu {
+            display: none;
         }
     }
 }
