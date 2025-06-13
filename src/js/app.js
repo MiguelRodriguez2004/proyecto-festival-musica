@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollNav();
     carrouselImages();
     toggleMenuButtons();
-    // scrollActive();
 })
 
 function crearGaleria() {
@@ -127,7 +126,6 @@ function toggleMenuButtons() {
     toggleButton.addEventListener('click', () => {
     socialContainer.classList.toggle('active');
 
-    // Cambiar ícono de + a - y viceversa
     if (socialContainer.classList.contains('active')) {
         toggleIcon.classList.remove('fa-plus');
         toggleIcon.classList.add('fa-minus');
@@ -137,20 +135,6 @@ function toggleMenuButtons() {
     }
     });
 }
-
-// function scrollActive() {
-//     const header = document.querySelector('.header');
-
-//     window.addEventListener('scroll', () => {
-//     const currentScroll = window.scrollY;
-
-//     if (currentScroll > 80) {
-//         header.classList.add('fixed', 'shrink');
-//     } else {
-//         header.classList.remove('fixed', 'shrink');
-//     }
-//     });
-// }
 
 function openNav() {
     document.getElementById('mobile-menu').style.width = "100%"
