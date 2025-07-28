@@ -1,9 +1,9 @@
 @use 'variables' as v;
 
 @mixin telefono {
-    @media (min-width: v.$telefono) {
-        @content;
-    }
+  @media (max-width: v.$telefono) {
+    @content;
+  }
 }
 
 @mixin tablet {

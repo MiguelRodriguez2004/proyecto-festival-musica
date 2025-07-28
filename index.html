@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
-
     <header class="header">
         <div class="logo">
             <img src="src/img/logo/Logos12.svg" alt="Logo de la marca">
@@ -43,26 +43,22 @@
         </div>
     </header>
 
-    <div class="video">
-      <div class="overlay">
-        <div class="contenedor contenido-video">
-          <h2>Techno & EDM Festival</h2>
-          <p>Julio 2026, Bogot&aacute;, Colombia.</p>
+    <section class="hero">
+    <div class="hero__content">
+        <div class="hero__text">
+            <h1>¡Transformamos tus espacios con <span class="hero__span">calidad y detalle!</span></h1>
+            <p>Expertos en remodelación, obra blanca y acabados a la medida. ¡Haz realidad el hogar que mereces!</p>
         </div>
-      </div>
-      <video autoplay muted loop>
-        <source src="video/dj.mp4" type="video/mp4" />
-        <source src="video/dj.ogv" type="video/ogg" />
-        <source src="video/dj.webm" type="video/webm" />
-      </video>
+        <div class="hero__images">
+            <img src="src/img/background/remodelacion.jpeg" alt="Remodelación cocina" class="hero__image">
+            <img src="src/img/background/backgroundHerramientas.jpg" alt="Baño remodelado" class="hero__image">
+        </div>
     </div>
+    </section>
 
     <section class="sobre-festival">
       <div class="imagen">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.634893842171!2d-76.52878362437373!3d3.4386824965357996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a68b5625a79d%3A0xf6953a55a2fe3caf!2sCl.%2015%20%2319-68%2C%20Guayaquil%2C%20Cali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1749759949838!5m2!1ses!2sco" 
-            width="600" 
-            height="450" 
-            style="border:0;" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
@@ -79,199 +75,87 @@
     </section>
 
     <section id="servicios" class="servicios">
-      <h3>Servicios</h3>
-  
-      <p class="dia">Viernes 21</p>
-      <div class="escenarios-contenedor">
-          <div class="escenario bg-amarillo">
-              <p class="nombre-escenario">Techno</p>
-  
-              <ul class="calendario">
-                  <li>
-                      24:00 | <span>Adam Beyer</span>
-                  </li>
-                  <li>
-                      22:00 | <span>Carl Cox</span>
-                  </li>
-                  <li>
-                      20:00 | <span>HI-LO</span>
-                  </li>
-                  <li>
-                      19:00 | <span>Amelie Lens</span>
-                  </li>
-                  <li>
-                      18:00 | <span>CamelPhat</span>
-                  </li>
-                  <li>
-                      17:00 | <span>ARTBAT</span>
-                  </li>
-              </ul>
-          </div>
-  
-          <div class="escenario bg-verde">
-              <p class="nombre-escenario">EDM</p>
-  
-              <ul class="calendario">
-                  <li>
-                      24:00 | <span>David Guetta</span>
-                  </li>
-                  <li>
-                      22:00 | <span>Tïesto</span>
-                  </li>
-                  <li>
-                      20:00 | <span>Martin Garrix</span>
-                  </li>
-                  <li>
-                      19:00 | <span>Steve Aoki</span>
-                  </li>
-                  <li>
-                      18:00 | <span>Afrojack</span>
-                  </li>
-                  <li>
-                      17:00 | <span>Vintage Culture</span>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  
-  
-      <!-- <p class="dia">Sábado 22</p>
-      <div class="escenarios-contenedor contenedor">
-          <div class="escenario bg-verde">
-              <p class="nombre-escenario">Techno</p>
-  
-              <ul class="calendario">
-                  <li>
-                      24:00 | <span>Reinier Zonneveld</span>
-                  </li>
-                  <li>
-                      22:00 | <span>Eric Prydz</span>
-                  </li>
-                  <li>
-                      20:00 | <span>Deadmau5</span>
-                  </li>
-                  <li>
-                      19:00 | <span>Joris Voorn</span>
-                  </li>
-                  <li>
-                      18:00 | <span>Nina Kraviz</span>
-                  </li>
-                  <li>
-                      17:00 | <span>Argy</span>
-                  </li>
-              </ul>
-          </div> -->
-  
-          <!-- <div class="escenario bg-amarillo">
-              <p class="nombre-escenario">EDM</p>
-  
-              <ul class="calendario">
-                  <li>
-                      24:00 | <span>Armin Van Buuren</span>
-                  </li>
-                  <li>
-                      22:00 | <span>Calvin Harris</span>
-                  </li>
-                  <li>
-                      20:00 | <span>Hardwell</span>
-                  </li>
-                  <li>
-                      19:00 | <span>Above & Beyond</span>
-                  </li>
-                  <li>
-                      18:00 | <span>Diplo</span>
-                  </li>
-                  <li>
-                      17:00 | <span>Steve Angello</span>
-                  </li>
-              </ul>
-          </div> -->
-      </div>
-  </section>
+        <h3>Servicios</h3>
 
-  <section class="galeria" id="galeria">
-    <h3>Galer&iacute;a</h3>
-    <div class="galeria-imagenes"></div>
-  </section>
+        <div class="escenarios-contenedor">
+            <div class="escenario bg-amarillo">
+                <p class="nombre-escenario">
+                    <i class="bi bi-tools"></i>
+                    Remodelación
+                </p>
+
+                <ul class="calendario">
+                    <li><i class="bi bi-check-lg"></i> Cocina integral a medida</li>
+                    <li><i class="bi bi-check-lg"></i> Baños modernos y funcionales</li>
+                    <li><i class="bi bi-check-lg"></i> Construcción de muros divisorios</li>
+                    <li><i class="bi bi-check-lg"></i> Ampliaciones interiores</li>
+                    <li><i class="bi bi-check-lg"></i> Instalación de cielo raso</li>
+                    <li><i class="bi bi-check-lg"></i> Pisos cerámicos y porcelanato</li>
+                </ul>
+            </div>
+
+            <div class="escenario bg-verde">
+                <p class="nombre-escenario">
+                    <i class="bi bi-pencil-square"></i>
+                    Obra blanca
+                </p>
+
+                <ul class="calendario">
+                    <li><i class="bi bi-check-lg"></i> Estuco, pintura y acabados</li>
+                    <li><i class="bi bi-check-lg"></i> Instalación de puertas y ventanas</li>
+                    <li><i class="bi bi-check-lg"></i> Iluminación empotrada y decorativa</li>
+                    <li><i class="bi bi-check-lg"></i> Electricidad y puntos eléctricos</li>
+                    <li><i class="bi bi-check-lg"></i> Enchapes de cocina y baño</li>
+                    <li><i class="bi bi-check-lg"></i> Adecuación de espacios comerciales</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="galeria" id="galeria">
+        <h3>Nuestros Proyectos</h3>
+        <div class="slider-container">
+            <div class="galeria-slider"></div>
+            <button class="slider-btn prev"><i class="bi bi-arrow-left"></i></button>
+            <button class="slider-btn next"><i class="bi bi-arrow-right"></i></button>
+        </div>
+    </section>
 
     <section class="contenedor aliados" id="marcas-aliados">
         <h3>Nuestros Aliados</h3>
     <div class="slider">
         <div class="slide-track" id="slide-track">
-            <div class="slide"><img src="src/img/logo/logoYeso.png" alt="Logo aliado"/></div>
-            <div class="slide"><img src="src/img/logo/Pintuco_Logo.webp" alt="Logo aliado"/></div>
-            <div class="slide"><img src="src/img/logo/logo-adl-co.png" alt="Logo aliado"/></div>
-            <div class="slide"><img src="src/img/logo/impadoc_logo.png" alt="Logo aliado"/></div>
-            <div class="slide"><img src="src/img/logo/Abracol_Logo.png" alt="Logo aliado"/></div>
-            <div class="slide"><img src="src/img/logo/Logo_GH.webp" alt="Logo aliado"/></div>
+            <div class="slide-marcas"><img src="src/img/logo/logoYeso.png" alt="Logo aliado"/></div>
+            <div class="slide-marcas"><img src="src/img/logo/Pintuco_Logo.webp" alt="Logo aliado"/></div>
+            <div class="slide-marcas"><img src="src/img/logo/logo-adl-co.png" alt="Logo aliado"/></div>
+            <div class="slide-marcas"><img src="src/img/logo/impadoc_logo.png" alt="Logo aliado"/></div>
+            <div class="slide-marcas"><img src="src/img/logo/Abracol_Logo.png" alt="Logo aliado"/></div>
+            <div class="slide-marcas"><img src="src/img/logo/Logo_GH.webp" alt="Logo aliado"/></div>
         </div>
     </div>
     </section>
 
+    <div class="social-buttons" id="socialButtons">
+        <a href="https://www.facebook.com/tu_pagina" target="_blank" class="social-button facebook" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/tu_usuario" target="_blank" class="social-button instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/1234567890" target="_blank" class="social-button whatsapp" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
 
-  <!-- <section id="boletos" class="contenedor-boletos">
-    <h3>Boletos</h3>
-
-    <div class="boletos">
-        <div class="pase">
-            <p class="pase-nombre">Pase 1 Día</p>
-            <header class="pase-header">
-                <p>Incluye</p>
-            </header>
-            <div class="pase-body">
-                <ul>
-                    <li>Acceso a ambos escenarios</li>
-                    <li>Bebida Ilimitada</li>
-                    <li>Camisa / Pulsera del Evento</li>
-                </ul>
-            </div>
-            <footer class="pase-footer">
-                <p>$100</p>
-            </footer>
-        </div>
-        <div class="pase">
-            <p class="pase-nombre">Pase 2 Días</p>
-            <header class="pase-header">
-                <p>Incluye</p>
-            </header>
-            <div class="pase-body">
-                <ul>
-                    <li>Acceso a ambos escenarios</li>
-                    <li>Bebida Ilimitada</li>
-                    <li>Camisa / Pulsera del Evento</li>
-                    <li>Acceso VIP</li>
-                </ul>
-            </div>
-            <footer class="pase-footer">
-                <p>$180</p>
-            </footer>
-        </div>
+        <button class="social-button toggle-button" aria-label="Abrir redes">
+            <i class="fas fa-plus"></i>
+        </button>
     </div>
-</section> -->
 
-<!-- Botones sociales flotantes -->
-<div class="social-buttons" id="socialButtons">
-    <a href="https://www.facebook.com/tu_pagina" target="_blank" class="social-button facebook" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://www.instagram.com/tu_usuario" target="_blank" class="social-button instagram" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://wa.me/1234567890" target="_blank" class="social-button whatsapp" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <!-- Botón toggle solo para móvil -->
-    <button class="social-button toggle-button" aria-label="Abrir redes">
-        <i class="fas fa-plus"></i>
-    </button>
-</div>
+    <footer class="footer">
+    <p>House of Dev. Todos los derechos reservados.</p>
+    </footer>
 
-<footer class="footer">
-  <p>House of Dev. Todos los derechos reservados.</p>
-</footer>
-
-<script src="build/js/app.js">
-</script>
+    <script src="build/js/app.js"></script>
 
 </body>
 </html>

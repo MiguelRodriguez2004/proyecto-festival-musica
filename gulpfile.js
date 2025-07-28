@@ -62,7 +62,7 @@
 export async function imagenes(done) {
   const srcDir = './src/img';
   const buildDir = './build/img';
-  const images =  await glob('./src/img/**/*{jpg,png}')
+  const images =  await glob('./src/img/**/*{jpg,png,jpeg}')
 
   images.forEach(file => {
       const relativePath = path.relative(srcDir, path.dirname(file));
@@ -91,7 +91,7 @@ export async function imagenes(done) {
   export function dev() {
     watch('src/scss/**/*.scss', css)
     watch('src/js/**/*.js', js)
-    watch('src/img/**/*.{png,jpg}', imagenes)
+    watch('src/img/**/*.{png,jpg,jpeg}', imagenes)
   }
 
   export default series( crop, js, css, imagenes, dev )

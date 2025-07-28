@@ -3,14 +3,9 @@
 
 .servicios {
     background-color: v.$rojo;
-    h3, .dia {
+    h3 {
         text-align: center;
         color: v.$blanco;
-    }
-
-    .dia {
-        font-size: 3rem;
-        text-transform: uppercase;
     }
 }
 
@@ -22,27 +17,45 @@
 }
 
 .escenario {
-    padding-top: 5rem;
-    .nombre-escenario {
-        font-size: 3rem;
-        font-weight: 900;
-        text-transform: uppercase;
-        text-align: center;
-    }
+  .nombre-escenario {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+  }
 }
+
+@media (max-width: 768px) {
+  .escenario .nombre-escenario {
+    padding-top: 40px;
+  }
+}
+
 
 .calendario {
-    @include m.resetear-lista;
-    li {
-        padding: 2.5rem;
-        font-weight: 700;
-        span {
-            font-weight: 400;
-        }
+  @include m.resetear-lista;
+
+  li {
+    padding: 2.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    i {
+      color: v.$rojo;
+      font-size: 2rem;
     }
+
+    span {
+      font-weight: 400;
+    }
+  }
 }
 
+
 .bg-amarillo {
+    border-radius: 15px;
     background-color: v.$gris;
     li:nth-child(odd) {
         background-color: lighten(v.$gris, 5%);
@@ -50,6 +63,7 @@
 }
 
 .bg-verde {
+    border-radius: 15px;
     background-color: v.$crema;
     li:nth-child(odd) {
         background-color: lighten(v.$crema, 5%);

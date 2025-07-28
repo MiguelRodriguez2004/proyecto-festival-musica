@@ -4,7 +4,102 @@
 .galeria {
     @include m.contenedor;
 
-    &-imagenes {
+    h3 {
+        text-align: center;
+        font-size: 4rem;
+        margin-bottom: 3rem;
+    }
+
+    img {
+        height: 20rem;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+}
+
+// =======================
+// MODAL
+// =======================
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(v.$negro, 0.5);
+    display: grid;
+    place-items: center;
+    animation: fadeIn ease-in 0.5s;
+    z-index: 1000;
+
+    &.fade-out {
+        animation: fadeOut ease-in 0.5s;
+    }
+
+    img {
+        max-width: 100rem;
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+    }
+}
+
+.btn-cerrar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: v.$blanco;
+    border: none;
+    color: v.$negro;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    cursor: pointer;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+// =======================
+// ANIMACIONES
+// =======================
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+// =======================
+// SLIDER / CARRUSEL
+// =======================
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.galeria-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: auto;
+}
+
+.slide {
+    flex: 0 0 100%;
+    display: grid;
+    gap: 2rem;
+
     @include m.grid(1, 2rem);
 
     @include m.telefono {
@@ -19,68 +114,40 @@
         @include m.grid(4, 2rem);
     }
 
-    
     @include m.escritorioXl {
         @include m.grid(4, 2rem);
     }
-
-    }
-
-    img {
-        height: 20rem;
-        object-fit: cover;
-        cursor: pointer;
-    }
-
 }
 
-.modal {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(v.$negro, 0.5);
-    display: grid;
-    place-items: center;
-    animation: fadeIn ease-in 0.5s;
+// =======================
+// BOTONES SLIDER
+// =======================
 
-    &.fade-out {
-        animation: fadeOut ease-in 0.5s;
-    }
-
-    img {
-        max-width: 100rem;
-    }
-
-}
-
-.btn-cerrar {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background-color: v.$blanco;
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
     border: none;
-    color: v.$negro;
+    font-size: 2.5rem;
+    padding: 0.6rem;
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 50%;
     display: grid;
     place-items: center;
-    font-weight: 700;
-    cursor: pointer;
-}
+    transition: background 0.3s;
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
+    &:hover {
+        background: rgba(0, 0, 0, 0.8);
     }
 
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
+    &.prev {
+        left: 10px;
     }
 
-    100% {
-        opacity: 0;
+    &.next {
+        right: 10px;
     }
 }

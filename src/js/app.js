@@ -4,27 +4,57 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollNav();
     carrouselImages();
     toggleMenuButtons();
+    sliderMobile();
 })
 
 function crearGaleria() {
-    const cantidad_imagenes = 8
-    const galeria = document.querySelector('.galeria-imagenes');
+    const total_imagenes = 24;
+    const imagenes_por_slide = 8;
+    const slider = document.querySelector('.galeria-slider');
+    const total_slides = Math.ceil(total_imagenes / imagenes_por_slide);
 
-    for (let i = 1; i <= cantidad_imagenes; i++) {
-        const imagen = document.createElement('PICTURE');
-        imagen.innerHTML = `
-            <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
-            <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
-            <img class="imagenes" loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
-        `;
+    for (let s = 0; s < total_slides; s++) {
+        const slide = document.createElement('div');
+        slide.classList.add('slide');
 
-        //Event Handler
-        imagen.onclick = function() {
-            mostrarImagen(i);
+        for (let i = 1 + s * imagenes_por_slide; i <= Math.min((s + 1) * imagenes_por_slide, total_imagenes); i++) {
+            const imagen = document.createElement('PICTURE');
+            imagen.innerHTML = `
+                <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+                <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
+                <img class="imagenes" loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
+            `;
+            imagen.onclick = () => mostrarImagen(i);
+            slide.appendChild(imagen);
         }
-        
-        galeria.appendChild(imagen);
+
+        slider.appendChild(slide);
     }
+
+    // Slider funcionalidad horizontal
+    let currentIndex = 0;
+    const btnPrev = document.querySelector('.slider-btn.prev');
+    const btnNext = document.querySelector('.slider-btn.next');
+
+    const updateSlider = () => {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    };
+
+    btnPrev.onclick = () => {
+        currentIndex = (currentIndex - 1 + total_slides) % total_slides;
+        updateSlider();
+    };
+
+    btnNext.onclick = () => {
+        currentIndex = (currentIndex + 1) % total_slides;
+        updateSlider();
+    };
+
+    // Autoplay opcional (comentado, puedes activarlo)
+    // setInterval(() => {
+    //     currentIndex = (currentIndex + 1) % total_slides;
+    //     updateSlider();
+    // }, 5000);
 }
 
 function mostrarImagen(i) {
@@ -142,4 +172,20 @@ function openNav() {
 
 function closeNav() {
     document.getElementById('mobile-menu').style.width = "0%"
+}
+
+function sliderMobile() {
+
+    let current = 0;
+    const images = document.querySelectorAll('.hero__image');
+
+    if (window.innerWidth <= 768) {
+    setInterval(() => {
+        images.forEach((img, index) => {
+        img.style.transform = `translateX(-${100 * current}%)`;
+        });
+        current = (current + 1) % images.length;
+    }, 3000);
+    }
+
 }
